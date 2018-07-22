@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <style>
+    </style>
+  </head>
+  <body>
+    <h1> Meme Generator! </h1>
+    <h2> Instructions </h2>
+    <p> Follow these 4 simple steps to create your own meme!
+      <ol>
+        <li> Select an image on the right (This will be your base meme!) </li>
+        <li> Enter some text into the boxes that appear (This will end up on top of the selected image!) </li>
+        <li> Click the "Preview" button to see it! </li>
+        <li> Click "Download Image" to save it! </li>
+      </ol>
+      Have fun!
+    </p>
+      <form enctype="multipart/form-data" action="uploader.php" method="POST">
+      <input type="hidden" name="MAX_FILE_SIZE" value="100000" />
+      Choose a file to upload:
+      <input id="files" type="file" name="uploadedfile" accept="image/gif, image/jpeg,image/png">
+      <output id"list"></output>
+      <input type="submit" value="Upload File" />
+    </form>
+    <script>
+      if (window.FileReader) {
+      function handleFileSelect(evt) {
+        var files= evt.target.files;
+        var f = files[0];
+        var reader = new FileReader();
+
+          reader.onload = (function(theFile){
+            return function(e) {
+              document.getElementById("list").innerHTML = ['<img src=',
+              e.target.result,'" title="'', theFile.name, "width="50" />'].join('');
+            };
+          })(f);
+          reader.readAsDataURL(f);
+        }
+      }else {
+        akert('This browser does not support FileReader');
+
+      }
+      document.getElementbyId('files').addEventListener('change, handleFileSelect, false');
+
+
+    </script>
+x
+  </body>
+</html>
