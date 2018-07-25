@@ -1,50 +1,17 @@
-<html>
-  <head>
-    <style>
-    </style>
-  </head>
-  <body>
-    <h1> Meme Generator! </h1>
-    <h2> Instructions </h2>
-    <p> Follow these 4 simple steps to create your own meme!
-      <ol>
-        <li> Select an image on the right (This will be your base meme!) </li>
-        <li> Enter some text into the boxes that appear (This will end up on top of the selected image!) </li>
-        <li> Click the "Preview" button to see it! </li>
-        <li> Click "Download Image" to save it! </li>
-      </ol>
-      Have fun!
-    </p>
-      <form enctype="multipart/form-data" action="uploader.php" method="POST">
-      <input type="hidden" name="MAX_FILE_SIZE" value="100000" />
-      Choose a file to upload:
-      <input id="files" type="file" name="uploadedfile" accept="image/gif, image/jpeg,image/png">
-      <output id"list"></output>
-      <input type="submit" value="Upload File" />
-    </form>
-    <script>
-      if (window.FileReader) {
-      function handleFileSelect(evt) {
-        var files= evt.target.files;
-        var f = files[0];
-        var reader = new FileReader();
+<div class='content-box' id="ConfusedKrabs">
+  <div class="captioninput">
+      <h4> Input your caption below </h4>
+      <input type="text"/>
+  </div>
+  <img id="confusedkrabspic" src="https://i.pinimg.com/564x/ce/27/1f/ce271fdb291752c39b7654968df51222.jpg" alt= "Confused Mr. Krabs">
+</div>
 
-          reader.onload = (function(theFile){
-            return function(e) {
-              document.getElementById("list").innerHTML = ['<img src=',
-              e.target.result,'" title="'', theFile.name, "width="50" />'].join('');
-            };
-          })(f);
-          reader.readAsDataURL(f);
-        }
-      }else {
-        akert('This browser does not support FileReader');
-
-      }
-      document.getElementbyId('files').addEventListener('change, handleFileSelect, false');
-
-
-    </script>
-x
-  </body>
-</html>
+<div class='content-box' id="ConfusedKrabs">
+  <div class="captioninput">
+    <h4> Input your caption below </h4>
+    <input type="text" id="Squinting-input" onkeydown="updateText('ConfusedKrabs')"/>
+  </div>
+  <div id="ConfusedKrabs-picture">
+    <h1 id="ConfusedKrabs-caption"></h1>
+    <img src="https://i.pinimg.com/564x/ce/27/1f/ce271fdb291752c39b7654968df51222.jpg" style="visibility: hidden;" />
+  </div>

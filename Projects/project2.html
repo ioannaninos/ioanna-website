@@ -2,87 +2,155 @@
   <head>
     <style>
       body {
-        background-color: #88cf4b;
-        color: white;
-      }
-      h1 {
-        text-align: center;
-      }
-      #instructions {
-        border: 5px solid #f4f1d6;
-        border-radius: 0px;
-        background-color: #D04B73;
-        color: white;
-        text-align: justify;
-        padding: 15px;
-        margin: 60px;
-      }
-      .content-box {
-        width: 60%;
-        height: 100%;
-        margin: 50px;
-        border: 4px solid #f4f1d6;
-        visibility: hidden;
-        position: absolute;
-        border-radius: 50px;
-        padding: 25px;
+        body {
+          background-color: #88cf4b;
+          color: white;
+          font-family: helvetica;
         }
-      #buttons {
-        margin: 0 auto;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
+        h1 {
+          text-align: center;
+        }
+        #instructions {
+          border: 5px solid #f4f1d6;
+          border-radius: 0px;
+          background-color: #D04B73;
+          color: white;
+          text-align: justify;
+          padding: 15px;
+          margin: 60px;
+        }
+        .content-box {
+          width: 60%;
+          height: 100%;
+          margin: 50px;
+          border: 4px solid #f4f1d6;
+          visibility: hidden;
+          position: absolute;
+          border-radius: 50px;
+          padding: 25px;
+          }
+        #buttons {
+          margin: 0 auto;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
 
-      }
-      #youngcardib {
-        background-color: #A73F16;
-      }
-      #youngcardibpic {
-        width: 60%;
-        height: 90%;
-        margin: 0 auto;
-      }
-      #cardiButton {
-        background-color: #A73F16;
-      }
-      #CreepyPatrick {
-        background-color: #E77396;
-      }
-      #patrickButton {
-        background-color: #E77396;
-      }
-      #ConfusedKrabs {
-        background-color: #E87E54;
-      }
-      #krabsButton {
-        background-color: #E87E54;
-      }
-      #Squinting, #squintingButton{
-        background-color: #3A9F74;
-      }
-      #Spongebob, #spongebobButton {
-        background-color: #8FD6B8;
-      }
-      #buttons a {
-        width:40%;
-        color: white;
-        padding: 10px;
-        text-align: center;
-        text-decoration: none;
-        border: 2px solid #f4f1d6;
-        border-radius: 50px;
-      }
-      #buttons a:active {
-        transform: translateY(5px);
-      }
-      .meme-box {
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        background-color: white;
-        width: 300px;
-        height: 400px;
-        margin: 0 auto;
+        }
+        h4 {
+          color: white;
+         }
+        #youngcardib {
+          background-color: #A73F16;
+        }
+        #youngcardibpic {
+          width: 60%;
+          height: 90%;
+          margin: 0 auto;
+        }
+        #youngcardib-picture {
+          background-image: url('https://i.pinimg.com/564x/00/64/78/0064786d228c4bf4cd1a53b6ac5e3fbe.jpg');
+          background-repeat: no-repeat;
+          width: 100%;
+          overflow: visible;
+        }
+        #cardiButton {
+          background-color: #A73F16;
+        }
+        #youngcardib-caption {
+          color: black;
+          font-family: helvetica;
+          font-size: 35px;
+        }
+        #CreepyPatrick {
+          background-color: #E77396;
+        }
+        #CreepyPatrick-picture {
+          background-image: url('https://i.pinimg.com/564x/42/d6/3e/42d63e334751f96ba33df17919131733.jpg');
+          background-repeat: no-repeat;
+          width: 100%;
+          overflow: visible;
+        }
+        #patrickButton {
+          background-color: #E77396;
+        }
+        #CreepyPatrick-caption {
+          color: black;
+          font-family: helvetica;
+          font-size: 35px;
+        }
+        #ConfusedKrabs {
+          background-color: #E87E54;
+          height: 730px;
+        }
+        #ConfusedKrabs-caption {
+          color: black;
+          font-family: helvetica;
+          font-size: 35px;
+        }
+        #ConfusedKrabs-picture {
+          background-image: url('https://i.pinimg.com/564x/ce/27/1f/ce271fdb291752c39b7654968df51222.jpg');
+          background-repeat: no-repeat;
+          width: 100%;
+          overflow: visible;
+        }
+        #ConfusedKrabs-caption {
+          color: black;
+          font-family: helvetica;
+          font-size: 35px;
+        }
+        #krabsButton {
+          background-color: #E87E54;
+        }
+        #Squinting {
+          background-color: #3A9F74;
+          height: 800px;
+          color: black;
+        }
+        #squinting-caption {
+          color: black;
+          font-family: helvetica;
+          font-size: 35px;
+        }
+        #squintingButton {
+          background-color: #3A9F74;
+        }
+        #Squinting-picture {
+          background-image: url('https://i.pinimg.com/564x/06/8c/7f/068c7f9305208a695ea1564a0a56b9b1.jpg');
+          background-repeat: no-repeat;
+          width: 100%;
+          overflow: visible;
+        }
+        #Spongebob {
+          background-color: #8FD6B8;
+          height: 600px;
+          color: black;
+        }
+        #spongebobButton {
+          background-color: #8FD6B8;
+        }
+        #Spongebob-picture {
+          background-image: url('https://i.pinimg.com/564x/8d/70/f7/8d70f7bca208ecd71ba33e24bbe0d639.jpg');
+          background-repeat: no-repeat;
+          width: 100%;
+          overflow: visible;
+        }
+        #spongebob-caption{
+          color: black;
+          font-family: helvetica;
+          font-size: 35px;
+        }
+        #buttons a {
+          width:40%;
+          color: white;
+          padding: 10px;
+          text-align: center;
+          text-decoration: none;
+          border: 2px solid #f4f1d6;
+          border-radius: 50px;
+        }
+        #buttons a:active {
+          transform: translateY(5px);
+        }
       }
     </style>
   </head>
@@ -92,10 +160,9 @@
       <h2> Instructions </h2>
       <p> Follow these 4 simple steps to create your own meme!
         <ol>
-          <li> Select an image on the right (This will be your base meme!) </li>
-          <li> Enter some text into the boxes that appear (This will end up on top of the selected image!) </li>
-          <li> Click the "Preview" button to see it! </li>
-          <li> Click "Download Image" to save it! </li>
+          <li> Click on one of the buttons below to choose your meme <em> (This will be your base meme!) </em> </li>
+          <li> Enter some text into the text box <em> (This will end up on top of the selected image!)</em> </li>
+          <li> Screenshot the image and send it to your friends! (Download button coming soon)
         </ol>
         Have fun!
       </p>
@@ -105,85 +172,111 @@
     <a id="patrickButton" onclick="showCreepyPatrick()"> Savage Patrick </a>
     <a id="krabsButton" onclick="showConfusedKrabs()">Confused Mr. Krabs </a>
     <a id="squintingButton" onclick="showSquinting()">Squinting Woman</a>
-    <a id="spongebob" onclick="showSpongebob()">Tired Spongebob </a>
+    <a id="spongebobButton" onclick="showSpongebob()">Tired Spongebob </a>
     </div>
+
+
     <div class='content-box' id="youngcardib">
       <div class="captioninput">
-          <h4> Input your caption below </h4>
-          <input type="text"/>
+        <h4> Input your caption below </h4>
+        <input type="text" id="youngcardib-input" onkeydown="updateText('youngcardib')"/>
       </div>
-      <img id="youngcardibpic" src="https://i.pinimg.com/originals/6e/e9/9b/6ee99b8017a6c672150c718a63fdf0d1.jpg" alt= "young cardi b">
+      <div id="youngcardib-picture">
+        <h1 id="youngcardib-caption"></h1>
+        <img src="https://i.pinimg.com/564x/00/64/78/0064786d228c4bf4cd1a53b6ac5e3fbe.jpg" style="visibility: hidden;" />
       </div>
-    </div>
-    <div class='content-box' id="CreepyPatrick">
+  </div>
+
+
+  <div class='content-box' id="CreepyPatrick">
       <div class="captioninput">
-          <h4> Input your caption below </h4>
-          <input type="text"/>
+        <h4> Input your caption below </h4>
+        <input type="text" id="CreepyPatrick-input" onkeydown="updateText('CreepyPatrick')"/>
       </div>
-      <img id="creepypatrickpic" src="https://i.pinimg.com/564x/88/4d/73/884d7363071155749bb673ab2b28f979.jpg" alt= "Savage Patrick">
+      <div id="CreepyPatrick-picture">
+        <h1 id="CreepyPatrick-caption"></h1>
+        <img src="https://i.pinimg.com/564x/42/d6/3e/42d63e334751f96ba33df17919131733.jpg" style="visibility: hidden;" />
+      </div>
     </div>
-    <div class='content-box' id="ConfusedKrabs">
+
+
+     <div class='content-box' id="ConfusedKrabs">
       <div class="captioninput">
-          <h4> Input your caption below </h4>
-          <input type="text"/>
+        <h4> Input your caption below </h4>
+        <input type="text" id="ConfusedKrabs-input" onkeydown="updateText('ConfusedKrabs')"/>
       </div>
-      <img id="confusedkrabspic" src="https://i.pinimg.com/564x/c9/b3/d4/c9b3d4dc68ec12ff190608e5652865ed.jpg" alt= "Confused Mr. Krabs">
+      <div id="ConfusedKrabs-picture">
+        <h1 id="ConfusedKrabs-caption"></h1>
+        <img src="https://i.pinimg.com/564x/ce/27/1f/ce271fdb291752c39b7654968df51222.jpg" style="visibility: hidden;" />
+      </div>
     </div>
-    <div class='content-box' id="Squinting">
+
+  <div class='content-box' id="Squinting">
       <div class="captioninput">
-          <h4> Input your caption below </h4>
-          <input type="text"/>
+        <h4> Input your caption below </h4>
+        <input type="text" id="Squinting-input" onkeydown="updateText('Squinting')"/>
       </div>
-      <img id="squintingpic" src="https://i.pinimg.com/564x/95/a7/bc/95a7bcc4f48d0337da87bf319f0c462e.jpg" alt= "Squinting Woman">
-    </div>
-    <div class='content-box' id="Spongebob">
+      <div id="Squinting-picture">
+        <h1 id="Squinting-caption"></h1>
+        <img src="https://i.pinimg.com/564x/06/8c/7f/068c7f9305208a695ea1564a0a56b9b1.jpg" style="visibility: hidden;" />
+      </div>
+   </div>
+
+   <div class='content-box' id="Spongebob">
       <div class="captioninput">
-          <h4> Input your caption below </h4>
-          <input type="text"/>
+        <h4> Input your caption below </h4>
+        <input type="text" id="Spongebob-input" onkeydown="updateText('Spongebob')"/>
       </div>
-      <img id="spongebobpic" src="https://i.pinimg.com/564x/7b/3a/95/7b3a951ab45e065f4238e26e7a569ba4.jpg" alt= "Tired Spongebob">
-    </div>
-    <script>
-      var ConfusedKrabs = document.getElementById("ConfusedKrabs")
-      var youngcardib= document.getElementById("youngcardib");
-      var CreepyPatrick = document.getElementById("CreepyPatrick")
-      var Squinting = document.getElementById("Squinting")
-      var Spongebob = document.getElementById("Spongebob")
-      function showYoungCardiB(){
-        youngcardib.style.visibility= "visible";
-        CreepyPatrick.style.visibility= "hidden";
-        ConfusedKrabs.style.visibility= "hidden";
-        Squinting.style.visibility= "hidden";
-        Spongebob.style.visibility= "hidden";
-      }
-      function showCreepyPatrick (){
-        CreepyPatrick.style.visibility= "visible";
-        youngcardib.style.visibility= "hidden";
-        ConfusedKrabs.style.visibility= "hidden";
-        Squinting.style.visibility= "hidden";
-        Spongebob.style.visibility= "hidden";
-      }
-      function showConfusedKrabs (){
-        ConfusedKrabs.style.visibility= "visible";
-        CreepyPatrick.style.visibility= "hidden";
-        youngcardib.style.visibility= "hidden";
-        Squinting.style.visibility= "hidden";
-        Spongebob.style.visibility= "hidden";
-      }
-      function showSquinting (){
-        Squinting.style.visibility= "visible";
-        ConfusedKrabs.style.visibility= "hidden";
-        CreepyPatrick.style.visibility= "hidden";
-        youngcardib.style.visibility= "hidden";
-        Spongebob.style.visibility= "hidden";
-      }
-      function showSpongebob (){
-        Spongebob.style.visibility= "visible";
-        ConfusedKrabs.style.visibility= "hidden";
-        CreepyPatrick.style.visibility= "hidden";
-        youngcardib.style.visibility= "hidden";
-        Squinting.style.visibility= "hidden";
-      }
+      <div id="Spongebob-picture">
+        <h1 id="spongebob-caption"></h1>
+        <img src="https://i.pinimg.com/564x/8d/70/f7/8d70f7bca208ecd71ba33e24bbe0d639.jpg" style="visibility: hidden;" />
+      </div>
+  </div>
+  <script>
+          var ConfusedKrabs = document.getElementById("ConfusedKrabs")
+          var youngcardib= document.getElementById("youngcardib");
+          var CreepyPatrick = document.getElementById("CreepyPatrick")
+          var Squinting = document.getElementById("Squinting")
+          var Spongebob = document.getElementById("Spongebob")
+          function showYoungCardiB(){
+            youngcardib.style.visibility= "visible";
+            CreepyPatrick.style.visibility= "hidden";
+            ConfusedKrabs.style.visibility= "hidden";
+            Squinting.style.visibility= "hidden";
+            Spongebob.style.visibility= "hidden";
+          }
+          function showCreepyPatrick (){
+            CreepyPatrick.style.visibility= "visible";
+            youngcardib.style.visibility= "hidden";
+            ConfusedKrabs.style.visibility= "hidden";
+            Squinting.style.visibility= "hidden";
+            Spongebob.style.visibility= "hidden";
+          }
+          function showConfusedKrabs (){
+            ConfusedKrabs.style.visibility= "visible";
+            CreepyPatrick.style.visibility= "hidden";
+            youngcardib.style.visibility= "hidden";
+            Squinting.style.visibility= "hidden";
+            Spongebob.style.visibility= "hidden";
+          }
+          function showSquinting (){
+            Squinting.style.visibility= "visible";
+            ConfusedKrabs.style.visibility= "hidden";
+            CreepyPatrick.style.visibility= "hidden";
+            youngcardib.style.visibility= "hidden";
+            Spongebob.style.visibility= "hidden";
+          }
+          function showSpongebob (){
+            Spongebob.style.visibility= "visible";
+            ConfusedKrabs.style.visibility= "hidden";
+            CreepyPatrick.style.visibility= "hidden";
+            youngcardib.style.visibility= "hidden";
+            Squinting.style.visibility= "hidden";
+          }
+          function updateText(id){
+            var text = document.getElementById(id + "-input").value;
+            document.getElementById(id + "-caption").innerHTML = text;
+          }
     </script>
   </body>
 </html>
