@@ -19,7 +19,7 @@
           margin: 60px;
         }
         .content-box {
-          width: 60%;
+          width: 40%;
           height: 100%;
           margin: 50px;
           border: 4px solid #f4f1d6;
@@ -150,8 +150,12 @@
         #buttons a:active {
           transform: translateY(5px);
         }
-      }
+        img {
+          margin: 0 auto;
+        }
     </style>
+    <script src="html2canvas.min.js">
+    </script>
   </head>
   <body>
     <h1> Meme Generator! </h1>
@@ -184,6 +188,7 @@
         <h1 id="youngcardib-caption"></h1>
         <img src="https://i.pinimg.com/564x/00/64/78/0064786d228c4bf4cd1a53b6ac5e3fbe.jpg" style="visibility: hidden;" />
       </div>
+      <button type="button" onclick="downloadImage('#youngcardib-picture')"> Download Image! </button>
   </div>
 
 
@@ -196,6 +201,7 @@
         <h1 id="CreepyPatrick-caption"></h1>
         <img src="https://i.pinimg.com/564x/42/d6/3e/42d63e334751f96ba33df17919131733.jpg" style="visibility: hidden;" />
       </div>
+      <button type="button" onclick="downloadImage('#CreepyPatrick-picture')"> Download Image! </button>
     </div>
 
 
@@ -206,8 +212,9 @@
       </div>
       <div id="ConfusedKrabs-picture">
         <h1 id="ConfusedKrabs-caption"></h1>
-        <img src="https://i.pinimg.com/564x/ce/27/1f/ce271fdb291752c39b7654968df51222.jpg" style="visibility: hidden;" />
+        <img src="confusedkrabsimage.jpg" style="visibility: hidden;" />
       </div>
+      <button type="button" onclick="downloadImage('#ConfusedKrabs-picture')"> Download Image! </button>
     </div>
 
   <div class='content-box' id="Squinting">
@@ -219,6 +226,7 @@
         <h1 id="Squinting-caption"></h1>
         <img src="https://i.pinimg.com/564x/06/8c/7f/068c7f9305208a695ea1564a0a56b9b1.jpg" style="visibility: hidden;" />
       </div>
+      <button type="button" onclick="downloadImage('#Squinting-picture')"> Download Image! </button>
    </div>
 
    <div class='content-box' id="Spongebob">
@@ -230,6 +238,7 @@
         <h1 id="spongebob-caption"></h1>
         <img src="https://i.pinimg.com/564x/8d/70/f7/8d70f7bca208ecd71ba33e24bbe0d639.jpg" style="visibility: hidden;" />
       </div>
+      <button type="button" onclick="downloadImage('#Spongebob-picture')"> Download Image! </button>
   </div>
   <script>
           var ConfusedKrabs = document.getElementById("ConfusedKrabs")
@@ -275,6 +284,15 @@
           function updateText(id){
             var text = document.getElementById(id + "-input").value;
             document.getElementById(id + "-caption").innerHTML = text;
+          }
+          function downloadImage(id){
+          html2canvas(document.querySelector(id),{allowTaint: true, useCORS: true}).then(canvas => {
+            // var a = document.createElement('a');
+            // a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+            // a.download = 'YourMeme.jpg';
+            // a.click();
+            document.body.appendChild(canvas);
+          });
           }
     </script>
   </body>
