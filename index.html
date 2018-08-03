@@ -1,68 +1,113 @@
 <!-- <html> -->
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <style>
   body {
-    background-image: url("backgroundimg.png") ;
-    background-color: #C2DDCF;
-    color: white;
-    margin: 125px;
-    font-family: Verdana, sans-serif;
-  }
-  #header {
-  text-align: center;
-  background-color: #FFD1C3;
-  border: 5px solid #FFFFFE;
-  border-radius: 5px;
-  color: #B79D93;
-  }
-#bio , #instruments , #ers {
-  border: 5px solid #FFFFFE;
-  border-radius: 5px;
-  background-color: #F1D3DE;
-  color: white;
-  text-align: justify;
-  padding: 15px;
-  margin: 30px;
-  }
-#instrumentlist {
-  border: 2px solid #FFFFFE;
-  border-radius: 5px;
-  color: white;
-  text-align: justify;
-  padding: 15px;
-  margin: 30px;
-}
-#languages , #projects , #other {
-  border: 5px solid #FFFFFE;
-  border-radius: 5px;
-  background-color: #E6AFC3;
-  color: white;
-  text-align: justify;
-  padding: 15px;
-  margin: 30px;
-}
-.container {
-  display: flex;
-  justify-content: space-evenly;
-  align-content: center;
-  flex-wrap: wrap;
-}
-#musicpic {
-  border: 2px solid #FFFFFE;
-  border-radius: 4px;
-}
-ul {
-  list-style-type: circle;
-}
-.graylink {
-  color: #B79D93;
-}
-.offwhitelink {
-  color: #FFF7F4;
-}
-.whitelink {
-  color: white;
-}
+     background-image: url("backgroundimg.png") ;
+     background-color: #C2DDCF;
+     color: white;
+     margin: 125px;
+     font-family: 'Raleway', sans-serif;
+   }
+ button {
+   width:40%;
+   background-color: #a9cee4;
+   color: white;
+   padding: 10px;
+   text-align: center;
+   text-decoration: none;
+   border-radius: 30px;
+ }
+ .pinkbutton {
+   border: 5px solid #FFFFFE;
+   border-radius: 25px;
+   background-color: #F1D3DE;
+   color: white;
+   font-size: 20px;
+ }
+ .purplebutton {
+   border: 5px solid #FFFFFE;
+   border-radius: 25px;
+   background-color: #E6AFC3;
+   color: white;
+   font-size: 20px;
+ }
+ #buttons a:active {
+   transform: translateY(5px);
+ }
+ #header {
+   text-align: center;
+   background-color: #FFD1C3;
+   border: 5px solid #FFFFFE;
+   border-radius: 5px;
+   color: #B79D93;
+   }
+ #buttons {
+   margin: 0 auto;
+   margin-top: 23px;
+   display: flex;
+   justify-content: space-between;
+ }
+ .pinkdiv {
+   border: 5px solid #FFFFFE;
+   border-radius: 5px;
+   background-color: #F1D3DE;
+   color: white;
+   text-align: justify;
+   padding: 15px;
+   margin: 30px;
+   width: 1070px;
+   visibility: hidden;
+   position: absolute;
+   }
+ #instrumentlist {
+   border: 2px solid #FFFFFE;
+   border-radius: 5px;
+   color: white;
+   text-align: justify;
+   padding: 15px;
+   margin: 30px;
+ }
+ .purplediv {
+   border: 5px solid #FFFFFE;
+   border-radius: 5px;
+   background-color: #E6AFC3;
+   color: white;
+   text-align: justify;
+   padding: 15px;
+   width: 1070px;
+   margin: 30px;
+   visibility: hidden;
+   position: absolute;
+ }
+ .container {
+   display: flex;
+   justify-content: space-evenly;
+   align-content: center;
+   flex-wrap: wrap;
+ }
+ #musicpic {
+   border: 2px solid #FFFFFE;
+   border-radius: 4px;
+ }
+ ul {
+   list-style-type: circle;
+ }
+ .graylink {
+   color: #B79D93;
+ }
+ .offwhitelink {
+   color: #FFF7F4;
+ }
+ .whitelink {
+   color: white;
+ }
+ #header a {
+   text-decoration: none;
+ }
+ #biop {
+   text-indent: 50px;
+ }
 
   </style>
 </head>
@@ -81,15 +126,23 @@ ul {
        alt= "github" width="40" height="40" > </a>
   </div>
 </div>
-<div id="bio">
+<div id="buttons">
+<button id="biobutton" class="pinkbutton" onclick="showBio()"> About Me </button>
+<button class="purplebutton" id="languagesbutton" onclick="showLanguages()"> Languages</button>
+<button class="pinkbutton"  id="instrumentsbutton" onclick="showInstruments()"> Instruments </button>
+<button id="projectsbutton" class="purplebutton" onclick="showProjects()"> Projects</button>
+<button class="pinkbutton" id="erbutton"  onclick="showErs()">Ethical Reflections </button>
+ <button id="otherbutton" class="purplebutton"   onclick="showOther()" > Other Cool Stuff
+</div>
+<div class="content-box, pinkdiv" id="bio">
     <h2> Get to Know Me! </h2>
-  <p> I'm 14 years old and I live in Brooklyn, New York. I was born in <a class="whitelink" href= "https://www.google.com/search?q=rio+de+janeiro&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjjjsLWw4ncAhVOx1kKHcp0DyMQ_AUICygC&biw=718&bih=803"> Rio de Jainero, Brazil </a>
+  <p id="biop"> I'm 14 years old and I live in Brooklyn, New York. I was born in <a class="whitelink" href= "https://www.google.com/search?q=rio+de+janeiro&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjjjsLWw4ncAhVOx1kKHcp0DyMQ_AUICygC&biw=718&bih=803"> Rio de Jainero, Brazil </a>
     , and most of my mom's family is still there. I moved to the USA when I was about 2 years old,
   and I visit Brazil often. My father is Greek, Polish, and Lithuanian, but growing up I was mainly exposed to Brazilian and Greek culture. I am a rising lower at Phillips Academy, and I will be living in Stevens next year. I lived in Isham last year, and I am rooming with Hilena and Donnally this summer in Paul Revere.
    My main hobbies include playing and listening to music, dancing, hanging out with my friends, and scrolling through Instagram. </p>
 </div>
-<div id="languages">
-  <h3> Languages </h3>
+<div  class="content-box, purplediv" id="languages">
+  <h2> Languages </h2>
   <p> Due to my background and neighborhood, I learned to speak a few languages, including...
     <ul>
       <li> English- Fluent</li>
@@ -99,8 +152,8 @@ ul {
     </ul>
   </p>
 </div>
-<div id="instruments" >
-  <h3> Instruments </h3>
+<div class="content-box, pinkdiv" id="instruments" >
+  <h2> Instruments </h2>
     <p> I have a great love and passion for music, and I play multiple instruments.
       <div class="container" >
       <ul id="instrumentlist" >
@@ -123,20 +176,20 @@ ul {
     </p>
   </div>
 
-    <div id="projects">
-      <h3> Projects <h3>
+    <div class="content-bo, purplediv" id="projects">
+      <h2> Projects <h2>
         <p> Check out some of the cool stuff I've done! </p>
         <ul>
           <li> <a href="index.html">  Project 1 </a> </li>
           <li> <a class="whitelink" href="Projects/project2.html"> Project 2 </a> </li>
-          <li> <a class="whitelink" href="projects/project3.html"> Project 3 </a> </li>
+          <li> <a class="whitelink" href="https://sagavinboyle.github.io/AndoverAttractions/"> Project 3 </a> </li>
           <li> <a class="whitelink" href="projects/project4.html"> Project 4 </a> </li>
           <li> <a class="whitelink" href="projects/project5.html"> Project 5 </a> </li>
         </ul>
     </div>
   </div>
-    <div id="ers">
-      <h3> Ethical Reflecions <h3>
+    <div class="content-box, pinkdiv" id="ers">
+      <h2> Ethical Reflecions <h2>
         <p> Check out some of my writing! </p>
         <ul>
           <li> <a class="whitelink" href="Ethical_reflection/ethicalreflection1.html"> Ethical Reflection 1 </a> </li>
@@ -146,11 +199,68 @@ ul {
           <li> <a class="whitelink" href="Ethical_reflection/ethicalreflection5.html"> Ethical Reflection 5 </a> </li>
         </ul>
     </div>
-  <div id="other">
-      <h3> Other </h3>
+  <div class="content-box, purplediv" id="other">
+      <h2> Other Cool Stuff!</h2>
       <ul>
         <li> <a class="whitelink" href="fob.html"> Here's </a> a website that I made about Fall Out Boy in Summer 2016.
       </ul>
   </div>
+  <script>
+    var Bio = document.getElementById("bio")
+    var Languages = document.getElementById("languages");
+    var Instruments = document.getElementById("instruments")
+    var Projects = document.getElementById("projects")
+    var Ers = document.getElementById("ers")
+    var Other = document.getElementById("other")
+
+    function showBio(){
+    Bio.style.visibility= "visible";
+    Languages.style.visibility= "hidden";
+    Instruments.style.visibility= "hidden";
+    Projects.style.visibility= "hidden";
+    Ers.style.visibility= "hidden";
+    Other.style.visibility= "hidden";
+    }
+    function showLanguages(){
+    Bio.style.visibility= "hidden";
+    Languages.style.visibility= "visible";
+    Instruments.style.visibility= "hidden";
+    Projects.style.visibility= "hidden";
+    Ers.style.visibility= "hidden";
+    Other.style.visibility= "hidden";
+    }
+    function showInstruments(){
+    Bio.style.visibility= "hidden";
+    Languages.style.visibility= "hidden";
+    Instruments.style.visibility= "visible";
+    Projects.style.visibility= "hidden";
+    Ers.style.visibility= "hidden";
+    Other.style.visibility= "hidden";
+    }
+    function showProjects(){
+    Bio.style.visibility= "hidden";
+    Languages.style.visibility= "hidden";
+    Instruments.style.visibility= "hidden";
+    Projects.style.visibility= "visible";
+    Ers.style.visibility= "hidden";
+    Other.style.visibility= "hidden";
+    }
+    function showErs(){
+    Bio.style.visibility= "hidden";
+    Languages.style.visibility= "hidden";
+    Instruments.style.visibility= "hidden";
+    Projects.style.visibility= "hidden";
+    Ers.style.visibility= "visible";
+    Other.style.visibility= "hidden";
+    }
+    function showOther(){
+    Bio.style.visibility= "hidden";
+    Languages.style.visibility= "hidden";
+    Instruments.style.visibility= "hidden";
+    Projects.style.visibility= "hidden";
+    Ers.style.visibility= "hidden";
+    Other.style.visibility= "visible";
+    }
+  </script>
 </body>
 </html>

@@ -3,7 +3,6 @@
     <style>
          body {
           background-color: #88cf4b;
-          background-image: url("lolbackground.jpg");
           color: white;
           font-family: helvetica;
         }
@@ -23,9 +22,12 @@
           width: 40%;
           height: 100%;
           margin: 0 auto;
+          display: block;
           border: 4px solid #f4f1d6;
           visibility: hidden;
           position: absolute;
+          left: 0;
+          right: 0;
           border-radius: 50px;
           padding: 25px;
           }
@@ -88,14 +90,14 @@
           font-size: 35px;
         }
         #ConfusedKrabs-picture {
-          background-image: url('https://i.pinimg.com/564x/ce/27/1f/ce271fdb291752c39b7654968df51222.jpg');
+          background-image: url('krabs.jpg');
           background-repeat: no-repeat;
           width: 100%;
           overflow: visible;
         }
         #ConfusedKrabs-caption {
           color: black;
-          font-family: helvetica;
+          font-family: Courier;
           font-size: 35px;
         }
         #krabsButton {
@@ -155,8 +157,10 @@
           margin: 0 auto;
         }
     </style>
-    <script src="html2canvas.min.js">
-    </script>
+    <!-- Doesn't really work... -->
+    <!-- <script src="html2canvas.min.js"> </script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    <script src="https://fastcdn.org/FileSaver.js/1.1.20151003/FileSaver.min.js"></script>
   </head>
   <body>
     <h1> Meme Generator! </h1>
@@ -213,9 +217,9 @@
       </div>
       <div id="ConfusedKrabs-picture">
         <h1 id="ConfusedKrabs-caption"></h1>
-        <img src="confusedkrabsimage.jpg" style="visibility: hidden;" />
+        <img src="krabs.jpg" style="visibility: hidden;" />
       </div>
-      <button type="button" onclick="downloadImage('#ConfusedKrabs-picture')"> Download Image! </button>
+      <button type="button" onclick="downloadImage('ConfusedKrabs-picture')"> Download Image! </button>
     </div>
 
   <div class='content-box' id="Squinting">
@@ -242,11 +246,11 @@
       <button type="button" onclick="downloadImage('#Spongebob-picture')"> Download Image! </button>
   </div>
   <script>
-          var ConfusedKrabs = document.getElementById("ConfusedKrabs")
+          var ConfusedKrabs = document.getElementById("ConfusedKrabs");
           var youngcardib= document.getElementById("youngcardib");
-          var CreepyPatrick = document.getElementById("CreepyPatrick")
-          var Squinting = document.getElementById("Squinting")
-          var Spongebob = document.getElementById("Spongebob")
+          var CreepyPatrick = document.getElementById("CreepyPatrick");
+          var Squinting = document.getElementById("Squinting");
+          var Spongebob = document.getElementById("Spongebob");
           function showYoungCardiB(){
             youngcardib.style.visibility= "visible";
             CreepyPatrick.style.visibility= "hidden";
@@ -254,6 +258,7 @@
             Squinting.style.visibility= "hidden";
             Spongebob.style.visibility= "hidden";
           }
+
           function showCreepyPatrick (){
             CreepyPatrick.style.visibility= "visible";
             youngcardib.style.visibility= "hidden";
@@ -261,6 +266,7 @@
             Squinting.style.visibility= "hidden";
             Spongebob.style.visibility= "hidden";
           }
+
           function showConfusedKrabs (){
             ConfusedKrabs.style.visibility= "visible";
             CreepyPatrick.style.visibility= "hidden";
@@ -268,6 +274,7 @@
             Squinting.style.visibility= "hidden";
             Spongebob.style.visibility= "hidden";
           }
+
           function showSquinting (){
             Squinting.style.visibility= "visible";
             ConfusedKrabs.style.visibility= "hidden";
@@ -275,6 +282,7 @@
             youngcardib.style.visibility= "hidden";
             Spongebob.style.visibility= "hidden";
           }
+
           function showSpongebob (){
             Spongebob.style.visibility= "visible";
             ConfusedKrabs.style.visibility= "hidden";
@@ -282,18 +290,28 @@
             youngcardib.style.visibility= "hidden";
             Squinting.style.visibility= "hidden";
           }
+
           function updateText(id){
             var text = document.getElementById(id + "-input").value;
             document.getElementById(id + "-caption").innerHTML = text;
           }
+
           function downloadImage(id){
-          html2canvas(document.querySelector(id),{allowTaint: true, useCORS: true}).then(canvas => {
-            // var a = document.createElement('a');
-            // a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
-            // a.download = 'YourMeme.jpg';
-            // a.click();
-            document.body.appendChild(canvas);
-          });
+            console.log(id)
+            domtoimage.toBlob(document.getElementById(id))
+            .then(function (blob) {
+              window.saveAs(blob, 'YourMeme.png');
+            });
+
+            // Doesn't really work...
+            // html2canvas(document.querySelector(id), {allowTaint: true, useCORS: true}).then(canvas => {
+            //   var a = document.createElement('a');
+            //   a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+            //   a.download = 'YourMeme.jpg';
+            //   a.click();
+            //   console.log(a);
+              // document.body.appendChild(canvas);
+            // });
           }
     </script>
   </body>
